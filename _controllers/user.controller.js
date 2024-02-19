@@ -34,11 +34,7 @@ export const signup = (req, res) => {
                     if (created == null) {
                         res.status(500).json({ error: true, statusCode: 500, message: "An error occurred, Please try again." });
                     } else {
-                        sendMail(email, OTP, 'signup').then((send) => {
-                            res.status(201).json({ error: false, statusCode: 201, message: "Account created successfully.", data: created.email });
-                        }).catch((error) => {
-                            res.status(500).json({ error: true, statusCode: 500, message: "Email not send." });
-                        })
+                        res.status(201).json({ error: false, statusCode: 201, message: "Account created successfully.", data: created.email });
                     }
                 }).catch(error => {
                     console.log(error)
