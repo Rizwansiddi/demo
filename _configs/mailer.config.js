@@ -1,11 +1,11 @@
 export const emailConfig = {
     service: "Gmail",
     type: "OAuth2",
-    user: "movingtexi@gmail.com",
-    clientId: "168489309094-8b04al59dqsrnmc8r3lk9np6o0v2n6s9.apps.googleusercontent.com",
-    clientSecret: "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",
+    user: "rizwan.sndigitech@gmail.com",
+    clientId: "775127613597-8ldhkjf0o3m4itpmkfflsooerhuda62d.apps.googleusercontent.com",
+    clientSecret: "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",
     redirectUri: "https://developers.google.com/oauthplayground",
-    refreshToken: "1//04rYBn76hStkRCgYIARAAGAQSNwF-L9IrRM3sXKDy7qchjiVHFEzZZs0q4924xKUbKOrNDEMk3xaS-L8tIxvUioF36vLG1DpG-VA",
-    accessToken: "ya29.a0AfB_byAX7W1ao2dIQFIae3rsgZz6qlqliXiLf-RKUivvZYegRz8vXK97fvOq4cNkISV5vTZ_fxKe9-RFcKdkbhC2lgy8MNpEUe9fut0Lpuin1FhEOLimVrI92O7gh0xC4PM2lD2qU9SnPlq765gVq7E0bneHDlc4K6HwaCgYKAY0SARISFQHGX2MiNHeKWl1Dg3KDpPhZ_0Zamg0171",
+    refreshToken: "1//04_6UddvKtIB5CgYIARAAGAQSNwF-L9Ir5TPgzSQrKWEscpGiU9tMyMi3KlUcR8Qav3droh8XegZEQ_R2lwW3vPbwc-BlFYc9q_I",
+    accessToken: "ya29.a0AfB_byDVvfeQxO3ZptTBsAHer7zF8gXYyUmC62WPhy5SHXIOoOhVdKVqTUMcW-S2Gl2zB88dJVgpjOF_o1-GgUtbMoX-D4HfLwx4A7lKXhs4BtshClfu7w9roO7uaiNkFdyYMgiABFEYfwY9UmNbtnbFsdZGKq7DXGvqaCgYKAfwSARESFQHGX2MilRWypeScTDdlrzHSIOAxjg0171",
     expires: "1494388182480",
 };
