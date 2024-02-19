@@ -8,7 +8,7 @@ let tokenExpiredTime = 8;
 
 export const signup = (req, res) => {
     let email = req.body.email
-    const requiredFields = ['password'];
+    const requiredFields = ['password', 'name', 'email'];
     for (const field of requiredFields) {
         if (!req.body[field] || req.body[field].trim() === '') {
             return res.status(400).json({ statusCode: 400, error: true, message: `${field} is required.` });
@@ -26,6 +26,7 @@ export const signup = (req, res) => {
             bcryptjs.hash(req.body.password, 10).then(hashed => {
                 const ins = new user({
                     email: email,
+                    name: req.body.name,
                     OTP: OTP,
                     password: hashed,
                 });
@@ -40,6 +41,7 @@ export const signup = (req, res) => {
                         })
                     }
                 }).catch(error => {
+                    console.log(error)
                     res.status(500).json({ error: true, statusCode: 500, message: "Invalid Email." });
                 });
             }).catch(error => {
@@ -47,6 +49,7 @@ export const signup = (req, res) => {
             });
         }
     }).catch(error => {
+        console.log(error)
         res.status(500).json({ error: true, statusCode: 500, message: "Invalid Email." });
     });
 };
@@ -81,7 +84,7 @@ export const accountVerification = (req, res) => {
     });
 };
 export const login = (req, res) => {
-    const requiredFields = ['password'];
+    const requiredFields = ['password', 'email'];
     for (const field of requiredFields) {
         if (!req.body[field] || req.body[field].trim() === '') {
             return res.status(400).json({ statusCode: 400, error: true, message: `${field} is required.` });
@@ -104,6 +107,7 @@ export const login = (req, res) => {
             res.status(500).json({ error: true, statusCode: 500, message: "Account not found." });
         }
     }).catch(error => {
+        console.log(error)
         res.status(500).json({ error: true, statusCode: 500, message: "Invalid Email" });
     });
 };
