@@ -86,6 +86,10 @@ export const login = (req, res) => {
             return res.status(400).json({ statusCode: 400, error: true, message: `${field} is required.` });
         }
     }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(req.body.email)) {
+        return res.status(400).json({ statusCode: 400, error: true, message: "Invalid email format." });
+    }
     user.findOne({ email: req.body.email }).then(userFound => {
         if (userFound !== null) {
             bcryptjs.compare(req.body.password, userFound.password).then(compared => {
